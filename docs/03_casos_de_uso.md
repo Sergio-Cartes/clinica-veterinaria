@@ -16,46 +16,6 @@ Este diagrama muestra qué puede hacer cada tipo de usuario dentro del sistema. 
 
 ![Diagrama de casos de uso](img/casos_de_uso.png)
 
-<details>
-<summary>Versión editable en Mermaid</summary>
-
-```mermaid
-flowchart LR
-    Rec["Recepcionista"]
-    Adm["Administrador"]
-
-    subgraph SIS["Sistema de Gestión de Clínica Veterinaria"]
-        CU01(["CU-01 Iniciar sesión"])
-        CU02(["CU-02 Registrar mascota"])
-        CU03(["CU-03 Consultar y buscar mascotas"])
-        CU04(["CU-04 Modificar mascota"])
-        CU06(["CU-06 Gestionar propietarios"])
-        CU05(["CU-05 Eliminar mascota"])
-        CU07(["CU-07 Consultar log de auditoría"])
-        CU08(["CU-08 Generar reporte PDF del log"])
-        CU09(["CU-09 Registrar cambio en el log"])
-    end
-
-    Adm -->|"hereda de"| Rec
-
-    Rec --- CU01
-    Rec --- CU02
-    Rec --- CU03
-    Rec --- CU04
-    Rec --- CU06
-
-    Adm --- CU05
-    Adm --- CU07
-    Adm --- CU08
-
-    CU02 -.->|"include"| CU09
-    CU04 -.->|"include"| CU09
-    CU05 -.->|"include"| CU09
-    CU08 -.->|"include"| CU07
-```
-
-</details>
-
 ### Cómo leerlo
 
 - Las líneas continuas unen a un actor con lo que puede hacer.
